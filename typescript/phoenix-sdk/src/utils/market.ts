@@ -276,8 +276,9 @@ function levelToUiLevel(
   return [
     (toNum(priceInTicks) / quoteAtomsPerQuoteUnit) *
       marketData.quoteLotsPerBaseUnitPerTick *
-      toNum(marketData.header.quoteLotSize),
-    toNum(sizeInBaseLots) / marketData.baseLotsPerBaseUnit,
+      toNum(marketData.header.quoteLotSize) /
+      marketData.header.rawBaseUnitsPerBaseUnit,
+    (toNum(sizeInBaseLots) * marketData.header.rawBaseUnitsPerBaseUnit) / marketData.baseLotsPerBaseUnit,
   ];
 }
 
@@ -331,7 +332,7 @@ export function printUiLadder(uiLadder: UiLadder) {
   const maxBaseSizeLength = maxBaseSize.toString().length;
 
   const printLine = (price: number, size: number, color: "red" | "green") => {
-    const priceStr = price.toFixed(3);
+    const priceStr = price.toFixed(8);
     const sizeStr = size.toFixed(2).padStart(maxBaseSizeLength, " ");
     console.log(
       priceStr + `\u001b[3${color === "green" ? 2 : 1}m` + sizeStr + "\u001b[0m"
