@@ -43,7 +43,8 @@ fn get_payer_keypair() -> solana_sdk::signer::keypair::Keypair {
     }
 }
 
-/// Sample code for getting market data from the blockchain
+/// Sample code for getting market data from the blockchain (devnet)
+/// Can run this via: cargo run -- --rpc https://api.devnet.solana.com  
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     println!("Starting");
@@ -51,7 +52,6 @@ async fn main() -> anyhow::Result<()> {
     let args = Args::parse();
     let payer = get_payer_keypair();
     let url = &args.rpc;
-
     println!("RPC endpoint: {}", url);
 
     let client = EllipsisClient::from_rpc(
@@ -105,7 +105,9 @@ async fn main() -> anyhow::Result<()> {
             market_pubkey, header.quote_params.mint_key, header.base_params.mint_key
         );
 
-        if header.base_params.mint_key == devnet_token_faucet::get_mint_address("SOL") {
+        if header.base_params.mint_key == generic_token_faucet::get_mint_address("SOL")
+            || header.base_params.mint_key == spl_token::native_mint::id()
+        {
             sol_usdc_market = Some(market_pubkey);
         }
     }
@@ -117,8 +119,9 @@ async fn main() -> anyhow::Result<()> {
 
     println!("Getting SOL/USDC order book");
     let sol_usdc_market = sol_usdc_market.unwrap();
-    let sdk_client = SDKClient::new_from_ellipsis_client(&sol_usdc_market, client).await;
-    let orderbook = sdk_client.get_market_orderbook().await;
+    println!("Market pubkey: {:?}", sol_usdc_market);
+    let sdk_client = SDKClient::new_from_ellipsis_client_with_all_markets(client).await?;
+    let orderbook = sdk_client.get_market_orderbook(&sol_usdc_market).await?;
     orderbook.print_ladder(5, 4);
 
     Ok(())

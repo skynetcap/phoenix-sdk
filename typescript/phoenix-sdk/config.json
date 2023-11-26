@@ -9,7 +9,7 @@
       },
       {
         "name": "Solana",
-        "symbol": "wSOL",
+        "symbol": "SOL",
         "mint": "B1sL3zxwyVnDGzRWCAsBkjL23wyu8HgwQP4XxgnHiSrv",
         "logoUri": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png"
       },
@@ -18,11 +18,32 @@
         "symbol": "Bonk",
         "mint": "8LN9tTVkGLqXRT2SxLUjN8YRHiKzYGLq1wGV1FL7E23P",
         "logoUri": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/6dhTynDkYsVM7cbF7TKfC9DWB636TcEM935fq7JzL2ES/logo.png"
+      },
+      {
+        "name": "Marinade Staked SOL",
+        "symbol": "mSOL",
+        "mint": "7KowotNADmz2krLdRQKBWygyG4Rsvtne4EG7WU7MBQd8",
+        "logoUri": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So/logo.png"
+      },
+      {
+        "name": "Wrapped SOL",
+        "symbol": "wSOL",
+        "mint": "So11111111111111111111111111111111111111112",
+        "logoUri": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png"
+      },
+      {
+        "name": "Drift USDC",
+        "symbol": "USDC-Drift",
+        "mint": "8zGuJQqwhZafTah7Uc7Z4tXRnguqkn5KLFAP8oV6PHe2",
+        "logoUri": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v/logo.png"
       }
     ],
     "markets": [
-      "6EvJccKnfxXvbAoCwf2iGTAEgckWuU834XAgT7tV4oxm",
-      "7EBrdSbDLvAJEMjigvSrBGkuRNdH9whvzkeojsHSVQib"
+      "CS2H8nbAVVEUHWPF5extCSymqheQdkd4d7thik6eet9N",
+      "626t4FAUCVWMSvZsjzyPDJjPAKvdrafJB2pAcC6Ags2m",
+      "78ehDnHgbkFxqXZwdFxa8HK7saX58GymeX2wNGdkqYLp",
+      "H3sb3W8VfKswTJsQM3MC7Ax1NzUcVYuuS3TnKpZiKV2L",
+      "HBEs1zhmqaKTRdx25W2uFMVV5YxojWDutR2fWBe3idYy"
     ]
   },
   "mainnet-beta": {
@@ -35,30 +56,30 @@
       },
       {
         "name": "Wrapped SOL",
-        "symbol": "wSOL",
+        "symbol": "SOL",
         "mint": "So11111111111111111111111111111111111111112",
         "logoUri": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png"
       },
       {
-        "name": "BASE",
-        "symbol": "BASE",
-        "mint": "7Z6Kczxo8ViRpfnsVvVaATB5fQ8bN2CQpxP8DHfd1vz5",
-        "logoUri": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png"
-      },
-      {
-        "name": "QUOTE",
-        "symbol": "QUOTE",
-        "mint": "5zUmtDCDeR17UYjvKKqvYp3S9pqcZA69cDoYPtojseJ4",
-        "logoUri": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png"
-      },
-      {
-        "name": "BONK",
-        "symbol": "BONK",
+        "name": "Bonk",
+        "symbol": "Bonk",
         "mint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
-        "logoUri": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/So11111111111111111111111111111111111111112/logo.png"
+        "logoUri": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/6dhTynDkYsVM7cbF7TKfC9DWB636TcEM935fq7JzL2ES/logo.png"
+      },
+      {
+        "name": "Marinade staked SOL",
+        "symbol": "mSOL",
+        "mint": "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",
+        "logoUri": "https://raw.githubusercontent.com/solana-labs/token-list/main/assets/mainnet/mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So/logo.png"
       }
     ],
-    "markets": ["14CAwu3LiBBk5fcHGdTsFyVxDwvpgFiSfDwgPJxECcE5", "4DoNfFBfF7UokCC2FQzriy7yHK6DY6NVdYpuekQ5pRgg", "GBMoNx84HsFdVK63t8BZuDgyZhSBaeKWB4pHHpoeRM9z"]
+    "markets": [
+      "4DoNfFBfF7UokCC2FQzriy7yHK6DY6NVdYpuekQ5pRgg",
+      "GBMoNx84HsFdVK63t8BZuDgyZhSBaeKWB4pHHpoeRM9z",
+      "FZRgpfpvicJ3p23DfmZuvUgcQZBHJsWScTf2N2jK8dy6",
+      "FicF181nDsEcasznMTPp9aLa5Rbpdtd11GtSEa1UUWzx",
+      "2t9TBYyUyovhHQq434uAiBxW6DmJCg7w4xdDoSK6LRjP"
+    ]
   },
   "localhost": {
     "tokens": [

@@ -7,15 +7,34 @@
 
 import * as beet from "@metaplex-foundation/beet";
 import * as web3 from "@solana/web3.js";
+import {
+  CancelMultipleOrdersByIdParams,
+  cancelMultipleOrdersByIdParamsBeet,
+} from "../types/CancelMultipleOrdersByIdParams";
 
 /**
  * @category Instructions
  * @category CancelMultipleOrdersByIdWithFreeFunds
  * @category generated
  */
+export type CancelMultipleOrdersByIdWithFreeFundsInstructionArgs = {
+  params: CancelMultipleOrdersByIdParams;
+};
+/**
+ * @category Instructions
+ * @category CancelMultipleOrdersByIdWithFreeFunds
+ * @category generated
+ */
 export const CancelMultipleOrdersByIdWithFreeFundsStruct =
-  new beet.BeetArgsStruct<{ instructionDiscriminator: number }>(
-    [["instructionDiscriminator", beet.u8]],
+  new beet.FixableBeetArgsStruct<
+    CancelMultipleOrdersByIdWithFreeFundsInstructionArgs & {
+      instructionDiscriminator: number;
+    }
+  >(
+    [
+      ["instructionDiscriminator", beet.u8],
+      ["params", cancelMultipleOrdersByIdParamsBeet],
+    ],
     "CancelMultipleOrdersByIdWithFreeFundsInstructionArgs"
   );
 /**
@@ -42,17 +61,21 @@ export const cancelMultipleOrdersByIdWithFreeFundsInstructionDiscriminator = 11;
  * Creates a _CancelMultipleOrdersByIdWithFreeFunds_ instruction.
  *
  * @param accounts that will be accessed while the instruction is processed
+ * @param args to provide as instruction data to the program
+ *
  * @category Instructions
  * @category CancelMultipleOrdersByIdWithFreeFunds
  * @category generated
  */
 export function createCancelMultipleOrdersByIdWithFreeFundsInstruction(
   accounts: CancelMultipleOrdersByIdWithFreeFundsInstructionAccounts,
+  args: CancelMultipleOrdersByIdWithFreeFundsInstructionArgs,
   programId = new web3.PublicKey("PhoeNiXZ8ByJGLkxNfZRnkUfjvmuYqLR89jjFHGqdXY")
 ) {
   const [data] = CancelMultipleOrdersByIdWithFreeFundsStruct.serialize({
     instructionDiscriminator:
       cancelMultipleOrdersByIdWithFreeFundsInstructionDiscriminator,
+    ...args,
   });
   const keys: web3.AccountMeta[] = [
     {
